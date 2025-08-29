@@ -63,3 +63,9 @@ The application provides an interactive menu with the following options:
 - click: For CLI interface
 - sqlalchemy: For ORM and database operations
 - alembic: For database migrations
+
+## Author 
+- Elnabas Eugine 
+
+## License
+- [MIT License](LICENSE)
