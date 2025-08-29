@@ -1,10 +1,10 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship, sessionmaker
+from sqlalchemy import Column, Integer, String, ForeignKey, create_engine # defin ing database columns and creating engines
+from sqlalchemy.ext.declarative import declarative_base # base class for declarative class definitions
+from sqlalchemy.orm import relationship, sessionmaker # for relationships and session management
 from sqlalchemy.exc import SQLAlchemyError
-import re
+import re # for regex validation
 
-Base = declarative_base()
+Base = declarative_base() # Base class for all models
 
 class Route(Base):
     __tablename__ = 'routes'

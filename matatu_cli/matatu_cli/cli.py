@@ -53,24 +53,24 @@ def handle_route_operations():
                     sacco = input("Enter sacco name: ").strip()
                     
                     route = Route.create(session, start, destination, sacco)
-                    print(f"✅ Route created successfully! ID: {route.id}")
+                    print(f" Route created successfully! ID: {route.id}")
                     
                 except ValueError as e:
-                    print(f"❌ Error: {e}")
+                    print(f" Error: {e}")
                 except Exception as e:
-                    print(f"❌ Unexpected error: {e}")
+                    print(f" Unexpected error: {e}")
             
             elif choice == '2':
                 # Delete Route
                 try:
                     route_id = int(input("Enter route ID to delete: ").strip())
                     Route.delete(session, route_id)
-                    print("✅ Route deleted successfully!")
+                    print(" Route deleted successfully!")
                     
                 except ValueError as e:
-                    print(f"❌ Error: {e}")
+                    print(f" Error: {e}")
                 except Exception as e:
-                    print(f"❌ Unexpected error: {e}")
+                    print(f" Unexpected error: {e}")
             
             elif choice == '3':
                 # List All Routes
@@ -86,7 +86,7 @@ def handle_route_operations():
                         print("-" * 60)
                         
                 except Exception as e:
-                    print(f"❌ Error: {e}")
+                    print(f" Error: {e}")
             
             elif choice == '4':
                 # Find Route by ID
@@ -100,16 +100,16 @@ def handle_route_operations():
                     print(f"Sacco: {route.sacco}")
                     
                 except ValueError as e:
-                    print(f"❌ Error: {e}")
+                    print(f" Error: {e}")
                 except Exception as e:
-                    print(f"❌ Unexpected error: {e}")
+                    print(f" Unexpected error: {e}")
             
             elif choice == '5':
                 # Back to Main Menu
                 break
             
             else:
-                print("❌ Invalid choice. Please enter 1-5.")
+                print(" Invalid choice. Please enter 1-5.")
                 
     finally:
         close_session(session)
@@ -130,24 +130,24 @@ def handle_fare_operations():
                     route_id = int(input("Enter route ID: ").strip())
                     
                     fare = Fare.create(session, stage, price, route_id)
-                    print(f"✅ Fare created successfully! ID: {fare.id}")
+                    print(f" Fare created successfully! ID: {fare.id}")
                     
                 except ValueError as e:
-                    print(f"❌ Error: {e}")
+                    print(f" Error: {e}")
                 except Exception as e:
-                    print(f"❌ Unexpected error: {e}")
+                    print(f" Unexpected error: {e}")
             
             elif choice == '2':
                 # Delete Fare
                 try:
                     fare_id = int(input("Enter fare ID to delete: ").strip())
                     Fare.delete(session, fare_id)
-                    print("✅ Fare deleted successfully!")
+                    print(" Fare deleted successfully!")
                     
                 except ValueError as e:
-                    print(f"❌ Error: {e}")
+                    print(f" Error: {e}")
                 except Exception as e:
-                    print(f"❌ Unexpected error: {e}")
+                    print(f" Unexpected error: {e}")
             
             elif choice == '3':
                 # List All Fares
@@ -163,7 +163,7 @@ def handle_fare_operations():
                         print("-" * 60)
                         
                 except Exception as e:
-                    print(f"❌ Error: {e}")
+                    print(f" Error: {e}")
             
             elif choice == '4':
                 # Find Fare by ID
@@ -177,9 +177,9 @@ def handle_fare_operations():
                     print(f"Route ID: {fare.route_id}")
                     
                 except ValueError as e:
-                    print(f"❌ Error: {e}")
+                    print(f" Error: {e}")
                 except Exception as e:
-                    print(f"❌ Unexpected error: {e}")
+                    print(f" Unexpected error: {e}")
             
             elif choice == '5':
                 # Search Fares by Stage
@@ -197,14 +197,14 @@ def handle_fare_operations():
                         print("-" * 60)
                         
                 except Exception as e:
-                    print(f"❌ Error: {e}")
+                    print(f" Error: {e}")
             
             elif choice == '6':
                 # Back to Main Menu
                 break
             
             else:
-                print("❌ Invalid choice. Please enter 1-6.")
+                print(" Invalid choice. Please enter 1-6.")
                 
     finally:
         close_session(session)
@@ -225,11 +225,11 @@ def main():
             handle_fare_operations()
         
         elif choice == '3':
-            print("👋 Thank you for using Matatu Fare & Route Planner CLI!")
+            print(" Thank you for using Matatu Fare & Route Planner CLI!")
             break
         
         else:
-            print("❌ Invalid choice. Please enter 1-3.")
+            print(" Invalid choice. Please enter 1-3.")
 
 if __name__ == "__main__":
     main()

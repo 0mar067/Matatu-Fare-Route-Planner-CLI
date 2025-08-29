@@ -18,40 +18,40 @@ def test_route_operations():
         
         # Test creating a route
         route = Route.create(session, "Kikuyu", "Nairobi", "KBS")
-        print(f"✅ Route created: ID={route.id}")
+        print(f" Route created: ID={route.id}")
         
         # Test getting all routes
         routes = Route.get_all(session)
-        print(f"✅ Found {len(routes)} routes")
+        print(f" Found {len(routes)} routes")
         
         # Test finding route by ID
         found_route = Route.find_by_id(session, route.id)
-        print(f"✅ Route found by ID: {found_route}")
+        print(f" Route found by ID: {found_route}")
         
         # Test creating a fare for the route
         fare = Fare.create(session, "Kikuyu Stage", 50, route.id)
-        print(f"✅ Fare created: ID={fare.id}")
+        print(f" Fare created: ID={fare.id}")
         
         # Test getting all fares
         fares = Fare.get_all(session)
-        print(f"✅ Found {len(fares)} fares")
+        print(f" Found {len(fares)} fares")
         
         # Test searching fares by stage
         search_fares = Fare.search_by_stage(session, "Kikuyu")
-        print(f"✅ Found {len(search_fares)} fares with 'Kikuyu' in stage name")
+        print(f" Found {len(search_fares)} fares with 'Kikuyu' in stage name")
         
         # Test deleting fare
         Fare.delete(session, fare.id)
-        print("✅ Fare deleted successfully")
+        print(" Fare deleted successfully")
         
         # Test deleting route
         Route.delete(session, route.id)
-        print("✅ Route deleted successfully")
+        print(" Route deleted successfully")
         
-        print("✅ All tests passed!")
+        print(" All tests passed!")
         
     except Exception as e:
-        print(f"❌ Test failed: {e}")
+        print(f" Test failed: {e}")
     finally:
         close_session(session)
 
